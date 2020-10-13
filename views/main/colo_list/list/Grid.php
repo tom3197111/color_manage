@@ -87,7 +87,7 @@ $color_Service->getFenyPage($fenyPage);
 								</thead>
 								<tbody id='tbody'>
 										<?php
-										if($_SESSION['grade']==1 ||$_SESSION['grade']==10 && empty($_SESSION['select_temp'])){
+										if(($_SESSION['grade'] ==1 || $_SESSION['grade'] ==10) && empty($_SESSION['select_temp'])){
 										    for ($i = 0; $i < count($fenyPage->res_array); $i ++) {
 										        $row = $fenyPage->res_array[$i];
 											    echo 	"<tr class='table-tr-content' >
@@ -98,14 +98,18 @@ $color_Service->getFenyPage($fenyPage);
 														&nbsp;
 														<input class="del" type="image"  id='del'src='assets/images/icon/ic_delete_24px.svg'  alt='圖片失效了' onclick='confirmDele(this)'/>
 														<input class='id' type="hidden" id="id" value=<?php echo "{$row['id']}";?>>
+														<!-- 複製內容 -->
+														&nbsp;
+														<input value="<?php echo "{$row['id']}";?>"  class="copy_content" type="image"  id='copy'src='assets/images/icon/content_copy-24px.svg'  alt='圖片失效了'/>
 														</td>
 														<td class="check_cancel<?php echo "{$row['id']}";?>" style='padding-left:10px;padding-top: 5px;display:none'>
 														<input value="<?php echo "{$row['id']}";?>" class='check' type='image' src='assets/images/icon/ic_check_box_24px.svg'  alt='圖片失效了' ; />
 														&nbsp;
 														<input value="<?php echo "{$row['id']}";?>"  class="cancel" type="image"  id='del'src='assets/images/icon/ic_cancel_24px.svg'  alt='圖片失效了'/>
 														</td>
+
 										<?php 
-												echo "
+												echo "	
 														<td  class='id{$row['id']}' id='id{$row['id']}' style='padding-left:10px;'>{$row['id']}</td>
 														<td id='guest{$row['id']}' class='td_edit' style='padding-left:10px;'>{$row['guest']}</td>
 														<td id='Book_Name{$row['id']}' class='td_edit' style='padding-left:10px;'>{$row['Book_Name']}</td>
@@ -133,7 +137,7 @@ $color_Service->getFenyPage($fenyPage);
 										?>
 								</tbody>
 								<?php
-								if($_SESSION['grade']==1 ||$_SESSION['grade']==10 && !empty($_SESSION['select_temp'])){
+								if(($_SESSION['grade']==1 || $_SESSION['grade']==10) && !empty($_SESSION['select_temp'])){
 									echo "<tbody>";
 									    for ($i = 0; $i < count($_SESSION["select_temp"]); $i ++) {
        										 $row = $_SESSION["select_temp"][$i];
@@ -145,7 +149,10 @@ $color_Service->getFenyPage($fenyPage);
 														&nbsp;
 														<input class="del" type="image"  id='del'src='assets/images/icon/ic_delete_24px.svg'  alt='圖片失效了' onclick='confirmDele(this)'/>
 														<input class='id' type="hidden" id="id" value=<?php echo "{$row['id']}";?>>
+														&nbsp;
+														<input value="<?php echo "{$row['id']}";?>"  class="copy_content" type="image"  id='copy'src='assets/images/icon/content_copy-24px.svg'  alt='圖片失效了'/>
 														</td>
+
 														<td class="check_cancel<?php echo "{$row['id']}";?>" style='padding-left:10px;padding-top: 5px;display:none'>
 														<input value="<?php echo "{$row['id']}";?>" class='check' type='image' src='assets/images/icon/ic_check_box_24px.svg'  alt='圖片失效了' ; />
 														&nbsp;
@@ -164,7 +171,7 @@ $color_Service->getFenyPage($fenyPage);
 										}
 									echo "</tbody>";
 								
-								}elseif($_SESSION['grade']==0 && !empty($_SESSION['select_temp'])){
+								}elseif($_SESSION['grade']==0  && !empty($_SESSION['select_temp'])){
 										echo "<tbody>";
 									    for ($i = 0; $i < count($_SESSION["select_temp"]); $i ++) {
        										 $row = $_SESSION["select_temp"][$i];

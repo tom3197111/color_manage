@@ -42,6 +42,10 @@ $(document).ready(function() {
         var check_cancel = 'check_cancel' + val
         $('.' + edit_del).hide();
         $('.' + check_cancel).show();
+        var tr_length = $('.list .table-tr-content').length; //tr 長度
+        for(var i=0; i < tr_length; i++){ 
+            $('.table-tr-content:eq('+i+') td:eq(1) input:eq(3)').hide()
+        }
         $(this).parent().siblings(".td_edit").each(function() { // 获取当前行的其他单元格
             var obj_text = $(this).find("input:text"); // 判断单元格下是否有文本框
             if (!obj_text.length) // 如果没有文本框，则添加文本框使之可以编辑
@@ -71,6 +75,10 @@ $(document).ready(function() {
         var check_cancel = 'check_cancel' + val
         $('.' + check_cancel).hide();
         $('.' + edit_del).show();
+        var tr_length = $('.list .table-tr-content').length; //tr 長度
+        for(var i=0; i < tr_length; i++){ 
+            $('.table-tr-content:eq('+i+') td:eq(1) input:eq(3)').show()
+        }
         $(this).parent().siblings(".td_edit").each(function() { // 获取当前行的其他单元格
             var obj_text = $(this).find("input:text"); // 判断单元格下是否有文本框
             if (!obj_text.length) // 如果没有文本框，则添加文本框使之可以编辑
@@ -147,6 +155,12 @@ $(document).ready(function() {
 
 $("#myBtn").click(function(){
   $("#myModal").show();
+  $('#insert_guest').val('')
+  $('#insert_Book_Name').val('')
+  $('#insert_content').val('')
+  $('#insert_number').val('')
+  $('#insert_Remarks').val('')
+  $('#insert_proportion').val('')
 });
 
 $(".close").click(function(){
@@ -236,7 +250,7 @@ $("#select_submit").click(function(){
             $.ajax({
             type: "post",
             url: url,
-            asyn:false,
+            // asyn:false,
             data:{id:id,guest:guest, Book_Name:Book_Name, content:content, number:number},
             dataType:"TEXT",
             success: function(data) {
@@ -258,6 +272,24 @@ $("#select_submit").click(function(){
 
 });
 
+// 複製
+$(".copy_content").click(function(){
+    $('#myModal').show();
+    var id = $(this).val();
+    var guest =$('#guest'+id).text();
+    var Book_Name =$('#Book_Name'+id).text();
+    var content =$('#content'+id).text();
+    var number =$('#number'+id).text();
+    var Remarks =$('#Remarks'+id).text();
+    var proportion =$('#proportion'+id).text();
+    $('#insert_guest').val(guest)
+    $('#insert_Book_Name').val(Book_Name)
+    $('#insert_content').val(content)
+    $('#insert_number').val(number)
+    $('#insert_Remarks').val(Remarks)
+    $('#insert_proportion').val(proportion)
+  
+});
 
 $("#Problem_Email_btn").click(function(){
   $("#Problem_Email_Modal").show();

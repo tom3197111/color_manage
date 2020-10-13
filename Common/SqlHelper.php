@@ -26,7 +26,6 @@ class SqlHelper
         }
 
     }
-
     // 執行dql語句
     public function execute_dql($sql)
     {

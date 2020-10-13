@@ -282,7 +282,7 @@
 
 						?>
 							
-						<?php 
+		<!-- 				<?php 
 							if($_SESSION['grade'] == '10'){
 								echo 
 									"<li class=''>
@@ -294,7 +294,7 @@
 									</li>";
 							}
 
-						?>
+						?> -->				
 						<li class="">
 							<a href="#" id=Problem_Email_btn>
 								<i class="menu-icon fa fa-caret-right"></i>
@@ -308,6 +308,32 @@
 						</ul>
 					</li>
 
+
+					<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">
+								色票資料統計圖
+							</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+								<b class="arrow"></b>
+
+								<ul class="submenu">
+									<li class="">
+										<a href="chart_list.php">
+											<i class="menu-icon fa fa-caret-right"></i>
+											圓餅圖
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+								</ul>
+					</li>
 <!-- 					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-pencil-square-o"></i>

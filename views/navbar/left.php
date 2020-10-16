@@ -325,9 +325,18 @@
 
 								<ul class="submenu">
 									<li class="">
+										<a href="chart_history_list.php">
+											<i class="menu-icon fa fa-caret-right"></i>
+											色票年度使用排行
+
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
 										<a href="chart_list.php">
 											<i class="menu-icon fa fa-caret-right"></i>
-											圓餅圖
+											色票歷史資料統計
 										</a>
 
 										<b class="arrow"></b>

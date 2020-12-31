@@ -1,6 +1,6 @@
 <!-- The Modal -->
 <div id="select_Modal" class="modal">
-
+<div class="asasas">
   <!-- Modal content -->
   <div class="modal-content" style="width: 450PX">
     <span class="select_close"><img src='assets/images/icon/ic_cancel_24px.svg'></span>

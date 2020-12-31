@@ -11,6 +11,8 @@
 		<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+		<!-- chart -->
+		<link rel="stylesheet" href="assets/css/chart/chart.css" />
 		<!-- page specific plugin styles -->
 		<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
 		<link rel="stylesheet" href="assets/css/bootstrap-datepicker3.min.css" />
@@ -35,6 +37,8 @@
 		<script src="assets/js/colo_list/common.js"></script>
 		<script src="assets/js/ace.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
-
+		<!-- chart -->
+		<script src="assets/js/chart/Chart.min.js"></script>
+		<script src="assets/js/chart/chart_history_from.js"></script>
 
 	</head>

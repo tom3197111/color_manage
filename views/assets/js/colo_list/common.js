@@ -49,7 +49,7 @@ $(document).ready(function() {
         $(this).parent().siblings(".td_edit").each(function() { // 获取当前行的其他单元格
             var obj_text = $(this).find("input:text"); // 判断单元格下是否有文本框
             if (!obj_text.length) // 如果没有文本框，则添加文本框使之可以编辑
-                $(this).html("<input type='text' style='width:150px;' value='" + $(this).text() + "'>");
+                $(this).html("<input type='text' style='width:100%;hight:100%' value='" + $(this).text() + "'>");
 
             // else
             //     $(this).html(obj_text.val());
@@ -57,7 +57,7 @@ $(document).ready(function() {
         $(this).parent().siblings(".td_edit_textarea").each(function() { // 获取当前行的其他单元格
             var obj_text = $(this).find("textarea"); // 判断单元格下是否有文本框
             if (!obj_text.length) // 如果没有文本框，则添加文本框使之可以编辑
-                $(this).html("<textarea type='text' style='width:160px;hight:100px'>" + $(this).text() + "</textarea>");
+                $(this).html("<textarea type='text' style='width:100%;hight:100%'>" + $(this).text() + "</textarea>");
             // else
             //     $(this).html(obj_text.val());
         });

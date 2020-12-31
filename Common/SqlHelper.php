@@ -10,7 +10,7 @@ class SqlHelper
 
     public $username = "root";
 
-    public $password = "root";
+    public $password = "";
 
     //public $password = "8968";
 

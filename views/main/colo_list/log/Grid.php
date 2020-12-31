@@ -21,27 +21,27 @@ $color_Service = new color_Service();
 $color_Service->getLogFenyPage($fenyPage);
 ?>
 
- <DIV  align=center style='width: 1660px; height: 756PX;overflow: auto;'>							
+ <DIV  align=center style='width: 100%; height: 756PX;overflow: auto;'>							
  							<table  class='list'>
 								
 								<thead>
 									<tr><caption><font style="padding-left:10px;" color="#FFFFFF">使用者日誌</font></caption> </tr>
 									<tr>
 							
-										<th style="width: 59px;">
+										<th >
 											<div>
 												<font style="padding-left:10px;" color="#777777">
 												使用者
 											</font>
 											</div>
 										</th>
-										<th style="width: 151px;">
+										<th >
 											<div><font style="padding-left:10px;" color="#777777">
 												行為
 											</font>
 											</div>
 										</th>
-										<th style="width: 154px;">
+										<th>
 											<div><font style="padding-left:10px;" color="#777777">
 												執行時間
 											</font>
@@ -64,7 +64,7 @@ $color_Service->getLogFenyPage($fenyPage);
 										?>
 								</tbody>
 							</table></DIV>
-							<div  style="width: 1673px;">
+							<div  style="width: 100%;">
 								<div >
 									<table  class="interface" style="background: #EFF3F8">
 										<tbody>
@@ -72,7 +72,7 @@ $color_Service->getLogFenyPage($fenyPage);
 												<td align="center">
 													<table  frame=void >
 														<tr>
-															<td align="center" style="white-space: nowrap; width: 342px;border: none;">
+															<td class="page_num"  align="center" style="width:100%;border: none;">
 																<?php echo $fenyPage->navigate; ?>
 															</td>
 															<td style="white-space: nowrap; width: 342px;border: none;">

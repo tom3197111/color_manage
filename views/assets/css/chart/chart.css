@@ -1,0 +1,48 @@
+.wrap {
+  max-width: 1060px;
+  margin-left: 550PX ;
+
+}
+
+/*.border{
+	 border:  1px #F1F1F1 solid;
+}*/
+.tborder{
+	 border:  1px #F1F1F1 solid;
+}
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+ .col-md-6 {
+    margin-left:10px;
+    width:31.6%;
+}
+@media only screen and (min-width: 321px) and (max-width: 1200px) {
+.container-left {
+/*    width: 20%;
+    float: left;
+  	position:relative;
+	top: 60px;
+	right: -40px;*/
+}
+}
+@media screen and (min-width: 750px){
+.container-left {
+    width: 20%;
+    float: left;
+  	position:relative;
+	top: 60px;
+	right: -150px;
+}
+}
+
+/*.border:hover {
+background-color: #FF9966;
+}*/
+/*左邊我設定為佔 container 的 20%，並靠左對齊。*/
+/*.container-right {
+    width: 80%;
+    float: right;
+}*/
+/*右邊設定佔 container 的 80%，並靠右對齊。*/

@@ -8,9 +8,9 @@ class SqlHelper
 
     public $dbname = "colour_manage";
 
-    public $username = "root";
+    public $username = "tom3197111";
 
-    public $password = "";
+    public $password = "a0917951311";
 
     //public $password = "8968";
 

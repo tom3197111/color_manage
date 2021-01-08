@@ -282,19 +282,13 @@
 
 						?>
 							
-		<!-- 				<?php 
-							if($_SESSION['grade'] == '10'){
-								echo 
-									"<li class=''>
+				<li class=''>
 									<a href='../Controller/color_Process.php?oper=excel'>
 										<i class='menu-icon fa fa-caret-right'></i>
 										下載EXCEL
 									</a>
 									<b class='arrow'></b>
-									</li>";
-							}
-
-						?> -->				
+									</li> 			
 						<li class="">
 							<a href="#" id=Problem_Email_btn>
 								<i class="menu-icon fa fa-caret-right"></i>

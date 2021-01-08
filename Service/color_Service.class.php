@@ -194,47 +194,47 @@ class color_Service
 
     // 根據輸入的條件查詢某個色票
     // 根據輸入的條件查詢某個色票
-    function selectcolor($id,$pan,$guest, $Book_Name,$content, $number,$oper)
+    function selectcolor($id=null,$guest=null , $Book_Name=null ,$content=null , $number=null ,$oper=null )
     {   
         
-        if($_SESSION['addcolor']=='1'){
-             $sql = "SELECT * FROM `colour_manage`  ORDER BY id DESC LIMIT 0 , 1" ;
-        }else{
+        // if($_SESSION['addcolor']=='1'){
+        //      $sql = "SELECT * FROM `colour_manage`  ORDER BY id DESC LIMIT 0 , 1" ;
+        // }else{
         $sql = "select * from colour_manage where " ;
         if($id!=""){
-            $sql.= "id='$id'";
-            if($pan !="" || $guest != ""|| $Book_Name != "" || $content != ""  || $number != ""){
+            $sql.= "id=".$id;
+            if( $guest != ""|| $Book_Name != "" || $content != ""  || $number != ""){
             $sql.= " and";
             }
         }
-        if($pan!=""){
-            $sql.= "pan='$pan'";
-            if($guest != ""|| $Book_Name != "" || $content != ""  || $number != ""){
-            $sql.= " and";
-            }
-        }
+        // if($pan!=""){
+        //     $sql.= "pan=".$pan;
+        //     if($guest != ""|| $Book_Name != "" || $content != ""  || $number != ""){
+        //     $sql.= " and";
+        //     }
+        // }
         if($guest!=""){
-            $sql.= " guest LIKE '%$guest%'";
+            $sql.= " guest LIKE '%".$guest."%'";
             if($Book_Name != "" || $content != "" || $number != ""){
             $sql.= " and";
             }            
         }
         if($Book_Name!=""){
-            $sql.= " Book_Name LIKE '%$Book_Name%'";
+            $sql.= " Book_Name LIKE '%".$Book_Name."%'";
             if($content != "" ||$number != ""){
             $sql.= " and";
             }                
         }
          if($content!=""){
-            $sql.= " content LIKE '%$content%'";
+            $sql.= " content LIKE '%".$content."%'";
             if($number != ""){
             $sql.= " and";
             }                
         }       
         if($number!=""){
-            $sql.= " number LIKE '%$number%'";
+            $sql.= " number LIKE '%".$number."%'";
         }
-        }
+        // }
          $_SESSION["sql"]=$sql;
         $sqlHelper = new SqlHelper();
         $arr = $sqlHelper->execute_dql2($sql);
@@ -246,7 +246,7 @@ class color_Service
             echo "ok";
         }else{
             $sqlHelper->close_connect();
-            echo "no";
+            echo  "no";
         }
 
 

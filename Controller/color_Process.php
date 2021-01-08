@@ -1,4 +1,5 @@
 <?php
+ini_set("display_errors", "On");
     if(!session_id()){
       session_start();
     }   
@@ -9,13 +10,12 @@ require_once dirname(dirname(__FILE__)).'/Service/excel.service.php';
 $color_Service = new color_Service();
 // $_SESSION['go']=$_REQUEST['selectcolor'];
 $_SESSION['postData']=$_REQUEST['oper'];
-$_SESSION['searchString']=$_REQUEST['id'];
 // $_SESSION['allfieldsearch']=$_REQUEST['allfieldsearch'];
 // 接收
 // $_SESSION['go']='開始判斷Selectcolor';
 if (!empty($_REQUEST['oper']) || !empty($_REQUEST['selectcolor'])) {
     //接收oper值
-    $selectcolor=$_REQUEST['selectcolor'];
+    // $selectcolor=$_REQUEST['selectcolor'];
     $_SESSION['go']='接收到selectcolor';
     $oper=$_REQUEST['oper'];
     //如果$oper="del" 說明色票要執行刪除請求
@@ -34,7 +34,6 @@ if (!empty($_REQUEST['oper']) || !empty($_REQUEST['selectcolor'])) {
     }else if($oper=="add"){
         //說明色票希望執行添加色票
         //接收數據
-        $_SESSION['searchString']='新增開始判斷';
         $pan=$_POST['pan'];
         $guest=$_POST['guest'];        
         $Book_Name=$_POST['Book_Name'];
@@ -43,12 +42,10 @@ if (!empty($_REQUEST['oper']) || !empty($_REQUEST['selectcolor'])) {
         $Remarks=$_POST['Remarks'];
         $proportion=$_POST['proportion'];
         if($pan =='' && $guest =='' && $Book_Name =='' && $content =='' && $number =='' && $Remarks =='' && $proportion ==''){
-            $_SESSION['searchString']='資料全部空白';
             header("location:../views/addColor.php");
             exit();
         }
         //完成添加->數據庫 
-        $_SESSION['searchString']='開始新增';
         $res=$color_Service->addcolor($pan, $guest, $Book_Name, $content, $number,$Remarks,$proportion);
         if($res==1){
             exit();
@@ -76,25 +73,21 @@ if (!empty($_REQUEST['oper']) || !empty($_REQUEST['selectcolor'])) {
             // header("location:../views/error.php");
             exit();
         }
-        $_SESSION['go']='開始準備selectcolor';
     }else if($oper == "selectcolor"){
-        $_SESSION['go']='條件達成';
         $id=$_POST['id'];
-        $pan=$_POST['pan'];
+        // $pan=$_POST['pan'];
         $guest=$_POST['guest'];
         $Book_Name=$_POST['Book_Name'];  
         $content=$_POST['content'];  
         $number=$_POST['number'];
-        if($id == ''&& $pan==''&& $guest==''&& $Book_Name=='' && $content =='' && $number==''){
-            $_SESSION['go']='搜尋條件全部空白';
+        if($id == ''&& $guest==''&& $Book_Name=='' && $content =='' && $number==''){
+            // $_SESSION['go']='搜尋條件全部空白';
             header("location:../views/color_list.php");
             exit();
         }
         //完成查詢->數據庫 
-         $_SESSION['go']='準備開始搜尋';
-        $res=$color_Service->selectcolor($id,$pan,$guest, $Book_Name, $content,$number,$oper);
-       $_SESSION['go']='搜尋完畢';
- 
+        $res=$color_Service->selectcolor($id,$guest, $Book_Name, $content,$number,$oper);
+
     }else if($oper == "remove_session"){
         $color_Service->remove_session();
     }else if($oper == "excel"){

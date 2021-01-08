@@ -1,4 +1,5 @@
 <?php
+ini_set("display_errors", "On");
 require_once dirname(__FILE__).'/Common/common.php';
 require_once dirname(__FILE__).'/Service/log_Service.php';
 	if(!session_id()){

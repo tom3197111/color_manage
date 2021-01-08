@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(dirname(__FILE__)).'\Common\SqlHelper.php';
+require_once dirname(dirname(__FILE__)).'/Common/SqlHelper.php';
 
 // require_once dirname(__FILE__).'/Model/color.class.php';
 class log_Service

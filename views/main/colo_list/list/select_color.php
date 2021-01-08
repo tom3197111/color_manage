@@ -38,7 +38,7 @@
 												內容
 											</font>
 											</div>
-										</th><td><input id='select_Book_Name' type="text" ></td>
+										</th><td><input id='select_content' type="text" ></td>
 									</tr>
 									<tr>
 										<th style="width: 151px;">

@@ -251,16 +251,17 @@ $("#select_submit").click(function(){
             type: "post",
             url: url,
             // asyn:false,
+            dataType: 'text',
             data:{id:id,guest:guest, Book_Name:Book_Name, content:content, number:number},
-            dataType:"TEXT",
-            success: function(data) {
-                if(data=="ok"){
+            success: function(adata) {
+                if(adata=="ok"){
                     window.location.replace(gotourl);
                 }else{
                     alertify
                           .alert("搜尋失敗", function(){
                             alertify.message('搜尋失敗');
                           });
+                          console.log(adata)
                 }
 
             },
